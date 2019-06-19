@@ -1,0 +1,244 @@
+q/*IMPORT FONTS*/
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Raleway:700');
+html {
+  overflow-y: scroll;
+}
+
+h2 {
+	font-family: 'Dancing Script';
+	/*margin-left: 520px;*/
+	font-size: 100px;
+	margin-top: 10px;
+	color: #336b87;
+}
+
+body {
+  background-image: url('http://blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-044.jpg');
+  font-family: 'Lora', serif;
+}
+
+form {
+  margin: 30vh auto 20px;
+  transition: all 0.5s;
+}
+
+form div {
+  margin: 0 auto
+}
+
+#para {
+	font-size: 28px;
+	color: #07575b;
+	font-family:  "Times New Roman", Times, serif;
+}
+
+#search {
+  border-radius: 20px !important;
+  width: 70vw !important;
+  max-width: 400px !important;
+  height: 50px !important;
+  border: solid #c4dfe6 !important;
+  border-width: 6px 9px !important;
+  margin-left: 20px;
+}
+
+.circle {
+  color: #c4dfe6;
+  border-radius: 50%;
+  transition: all 0.5s;
+  background-color: #336b87;
+  border: 8px solid  #c4dfe6;
+}
+
+.circle:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.circle:hover {
+  border-width: 5px;
+}
+
+.search-button {
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+}
+
+.remove-button {
+  display: none;
+  font-size: 16px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+
+.result-list {
+  transition: all 0.5s;
+}
+
+
+.result {
+  background-color: #e8f0fc;
+  padding: 10px 20px 5px;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.result h4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.result:hover {
+  box-shadow: -10px 0px 0px #79a9f7, 10px 0px 0px #79a9f7;
+}
+
+.result-list a {
+  color: black;
+}
+
+.result-list a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.blink-border {
+  animation-name: blinker;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinker {
+  from {}
+  50% {
+    border-color: #073784;
+  }
+  to {}
+}
+
+::-webkit-scrollbar {
+  background-color: #073784;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background-color: #79a9f7;
+}
+
+.demo {
+  font-size: 20px;
+  
+}
+#load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    background:url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25)
+}
+#loading {
+position: fixed;
+width: 100%;
+height: 100vh;
+background: #fff url('https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif') no-repeat center center;
+z-index: 9999;
+}
+.rolldown-list {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.rolldown-list li {
+  padding: 1em;
+  margin-bottom: .125em;
+  display: block;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.rolldown-list li {
+  visibility: hidden;
+  animation: rolldown .7s 1;
+  transform-origin: 50% 0;
+  animation-fill-mode: forwards;
+}
+
+.rolldown-list li:nth-child(2n) {
+  background-color: white;
+  color: #07575b;
+}
+
+.rolldown-list li:nth-child(2n+1) {
+  background-color: #336b87;
+  color: white;
+}
+
+#myList {
+  position: absolute;
+  width: 50%; 
+  left: 50%;
+  margin-left: -25%;
+}
+
+#btnReload {
+  float: right;
+  color: #333;
+  background: #ccc;
+  text-transform: uppercase;
+  border: none;
+  padding: .5em 1em;
+}
+
+#btnReload:hover {
+  background: #ddd;
+}
+
+.container-fluid {
+	margin-top: -120px;
+}
+
+@keyframes rolldown {
+  0% {
+    visibility: visible;
+    transform: rotateX(180deg) perspective(500px);
+  }
+  70% {
+    visibility: visible;
+    transform: rotateX(-20deg);
+  }
+  100% {
+    visibility: visible;
+    transform: rotateX(0deg);
+  }
+}
+/*.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  /*animation: spin 2s linear infinite;*/
+/*}*/
+
+/* Safari */
+/*@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }*/

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>NewsTeller</title>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="style.css"> -->
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/style1.css') }}">
+
+<script>
+$('.rolldown-list li').each(function () {
+  var delay = ($(this).index() / 0.10) + 's';
+  $(this).css({
+    webkitAnimationDelay: delay,
+    mozAnimationDelay: delay,
+    animationDelay: delay
+  });
+});
+
+$('#btnReload').click(function () {
+  $('#myList').removeClass('rolldown-list');
+  setTimeout(function () {
+    $('#myList').addClass('rolldown-list');
+  }, 1);
+});
+</script>
+
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  
+</head>
+
+<!--<body style="background-color:powderblue;">-->
+<!-- <div id="loading"></div> -->
+    <div id="contents">
+<!-- powderblue -->
+
+  <script src="https://use.fontawesome.com/a446617dac.js"></script>
+
+<center><h2>NewsTeller <i class="fa fa-newspaper-o" aria-hidden="true"></i></h2></center>
+<div class="container-fluid">
+
+  <!-- INPUT BOX -->
+  <div class="row">
+    <div class="col-sm-12">
+
+      <form class="form-inline" action="{{ url_for('addRegion') }}" method="post">
+        <div class="form-group">
+
+          <label class="sr-only" for="search">Search:</label>
+
+          <input type="text" name="search" class="form-control" id="search" placeholder="Search" autocomplete="off" />
+            <div class="row">
+
+    <div class="col-sm-12 text-center">
+
+      <button class="circle search-button" value="Submit" >
+          <i class="fa fa-search form-control-feedback" aria-hidden="true"></i>
+        </button>
+
+    </div>
+    <div class=" col-sm-12 text-center">
+
+      <button class="circle remove-button" onclick="blankAll()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+
+    </div>
+  </div>
+        </div>
+      </form>
+            <a href="http://127.0.0.1:5000/addRegion1">
+        <button class="circle search-button" style="margin-left: 810px;" >
+            <i class="fa fa-bell" aria-hidden="true"></i>
+          </button>
+      </a>
+      <a href="http://127.0.0.1:5000/addRegion2">
+        <button class="circle search-button" style="margin-left: 15px;" >
+            <i class="fa fa-music" aria-hidden="true"></i>
+          </button>
+      </a>
+            <a href="http://127.0.0.1:5001/newsSpider">
+        <button class="circle search-button" style="margin-left: 15px;" >
+            <i class="fa fa-globe" aria-hidden="true"></i>
+          </button>
+      </a>
+    </div>
+  </div>
+  <br>
+  <hr>
+    <!-- <p id="para">{{wikiSummary}}</p> -->
+    <p id="para">{{para}}</p>
+    
+    <img class="img-thumbnail" src={{image}} height="300" width="300">
+    <br>
+    <div style="margin-top:-150px" >
+    <ul class="rolldown-list" id="myList">
+    {% for i in result %}
+    <li>{{i}}</li>
+    {% endfor %}
+    </ul>
+    </div>
+  </div>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
